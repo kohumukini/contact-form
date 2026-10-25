@@ -20,10 +20,12 @@
             <fieldset id="contact-information">
                 <label for="fname">First Name
                     <input type="text" id="fname" name="fname" placeholder="John">
+                    <p id="err-fname" class="err">*First Name is Required</p>
                 </label>
 
                 <label for="lname">Last Name
                     <input type="text" id="lname" name="lname" placeholder="Doe">
+                    <p id="err-lname" class="err">*Last Name is Required</p>
                 </label>
 
                 <label for="title">Job Title
@@ -36,23 +38,27 @@
 
                 <label for="linkedin">Linkedin URL
                     <input type="url" id="linkedin" name="linkedin">
+                    <p id="err-linkedin" class="err">*Proper Linkedin Address Must be Provided</p>
                 </label>
 
                 <label for="email">Email
                     <input type="email" id="email" name="email" placeholder="john.doe@mail.com">
+                    <p id="err-email" class="err">*Valid Email Address Required</p>
+                    <p id="err-mailing" class="err">*Please Enter an Email</p>
                 </label>
 
                 <label for="meet">How did we meet?
-                    <select id="meet" name="meet">
+                    <select id="meet" name="meet" onchange="specify()">
                         <option value="none">-- Select an Option --</option>
                         <option value="event">At an Event</option>
                         <option value="school">At College</option>
                         <option value="work">At Work</option>
                         <option value="other">Other</option>
                     </select>
+                    <p id="err-meet" class="err">*Please Choose an Option</p>
                 </label>
 
-                <label for="select-other">Other (please specify)
+                <label for="select-other" id="other">Other (please specify)
                     <input type="text" id="select-other" name="select-other">
                 </label>
 
@@ -62,11 +68,11 @@
             </fieldset>
             <fieldset id="messaging-options">
                 <label for="messaging-list">
-                    <input type="checkbox" name="messaging-list" id="messaging-list">
+                    <input type="checkbox" name="messaging-list" id="messaging-list" onclick="showEmailFormat()">
                     Please add me to your messaging list 
                 </label>
 
-                <p><strong>Choose an email format:</strong>
+                <p id="format-mail"><strong>Choose an email format:</strong>
                     <label for="format-html">
                         <input type="radio" name="format" id="format-html">
                         <strong>HTML</strong>

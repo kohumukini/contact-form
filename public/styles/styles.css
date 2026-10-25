@@ -77,6 +77,14 @@ form {
     margin: 10px 0; 
 }
 
+#format-mail {
+    display: none;
+}
+
+#other {
+    display: none;
+}
+
 button {
     max-width: 12%;
     padding: 10px 8px;
@@ -85,4 +93,11 @@ button {
     border: none; 
     border-radius: 4px; 
     color: white; 
+    margin-top: 1rem;
 }
+
+.err {
+    color: red; 
+    display: none;  
+}
+
