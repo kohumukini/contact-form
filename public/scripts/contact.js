@@ -10,6 +10,7 @@ document.getElementById("contact-form").onsubmit = () => {
     const linkedinAddress = document.getElementById("linkedin").value.trim(); 
     const meet = document.getElementById("meet").value.trim(); 
     const messagingList = document.getElementById("messaging-list");
+    const otherDescription = document.getElementById("other").value.trim();
 
     if (fname.trim() === "") {
         document.getElementById("err-fname").style.display = "block"; 
@@ -31,6 +32,11 @@ document.getElementById("contact-form").onsubmit = () => {
     if (messagingList.checked && email === "") {
         document.getElementById("err-mailing").style.display = "block";
         isValid = false;
+    }
+
+    if (meet == "other" && otherDescription === "") {
+        document.getElementById('err-other').style.display = "block"; 
+        isValid = false; 
     }
 
     if (linkedinAddress) {
@@ -60,10 +66,10 @@ const showEmailFormat = () => {
 
 const specify = () => {
     if (document.getElementById("meet").value.trim() == "other") {
-        document.getElementById("other").style.display = "flex";
+        document.getElementById("select-other").style.display = "flex";
     } else {
-        document.getElementById("other").style.display = "none";
-        document.getElementById("select-other").value = "";
+        document.getElementById("select-other").style.display = "none";
+        document.getElementById("other").value = "";
     }
 }
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./styles/styles.css" >
+    <link rel="icon" href="./images/favicon_logo.png" >
+
+    <title>Admin</title>
+</head>
+<body>
+    <% contacts.forEach(contact => { %>
+        <h2><%= contact.fname %> <%= contact.lname %></h2>        
+        <ul>
+            <li><%= contact.title%></li>
+            <li><%= contact.email%></li>
+            <li><%= contact.linkedin%></li>
+            <li><%= contact.meet%></li>
+            <li><%= contact["select-other"]%></li>
+            <li><%= contact.message%></li>
+            <li><%= contact.format%></li>
+            <li><%= contact["messaging-list"]%></li>
+            <li><%= contact.timestamp.toLocaleString()%></li>
+        </ul>
+    <% }); %>
+</body>
+</html>
